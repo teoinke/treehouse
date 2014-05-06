@@ -14,7 +14,7 @@ class QuedasController < ApplicationController
       head :created
     else
       head :bad_request
-
+    end
   end
 
   # GET /quedas/1
