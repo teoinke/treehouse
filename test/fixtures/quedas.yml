@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  imei: MyString
+  classificacao: 
+  timestamp_queda: 2014-04-23 19:02:53
+  timestamp_recebimento: 2014-04-23 19:02:53
+  amostra: MyText
+
+two:
+  imei: MyString
+  classificacao: 
+  timestamp_queda: 2014-04-23 19:02:53
+  timestamp_recebimento: 2014-04-23 19:02:53
+  amostra: MyText

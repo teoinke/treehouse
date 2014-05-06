@@ -1,0 +1,37 @@
+<%= form_for(@queda) do |f| %>
+  <% if @queda.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@queda.errors.count, "error") %> prohibited this queda from being saved:</h2>
+
+      <ul>
+      <% @queda.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :imei %><br>
+    <%= f.text_field :imei %>
+  </div>
+  <div class="field">
+    <%= f.label :classificacao %><br>
+    <%= f.text_field :classificacao %>
+  </div>
+  <div class="field">
+    <%= f.label :timestamp_queda %><br>
+    <%= f.datetime_select :timestamp_queda %>
+  </div>
+  <div class="field">
+    <%= f.label :timestamp_recebimento %><br>
+    <%= f.datetime_select :timestamp_recebimento %>
+  </div>
+  <div class="field">
+    <%= f.label :amostra %><br>
+    <%= f.text_area :amostra %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

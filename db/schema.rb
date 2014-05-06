@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403164322) do
+ActiveRecord::Schema.define(version: 20140423220253) do
+
+  create_table "quedas", force: true do |t|
+    t.string   "imei"
+    t.binary   "classificacao"
+    t.datetime "timestamp_queda"
+    t.datetime "timestamp_recebimento"
+    t.text     "amostra"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "statuses", force: true do |t|
     t.string   "name"

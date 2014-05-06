@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Imei:</strong>
+  <%= @queda.imei %>
+</p>
+
+<p>
+  <strong>Classificacao:</strong>
+  <%= @queda.classificacao %>
+</p>
+
+<p>
+  <strong>Timestamp queda:</strong>
+  <%= @queda.timestamp_queda %>
+</p>
+
+<p>
+  <strong>Timestamp recebimento:</strong>
+  <%= @queda.timestamp_recebimento %>
+</p>
+
+<p>
+  <strong>Amostra:</strong>
+  <%= @queda.amostra %>
+</p>
+
+<%= link_to 'Edit', edit_queda_path(@queda) %> |
+<%= link_to 'Back', quedas_path %>
