@@ -34,15 +34,25 @@ class QuedasController < ApplicationController
   # POST /quedas
   # POST /quedas.json
   def create
-    @queda = Queda.new(queda_params)
-
-    respond_to do |format|
-      if @queda.save
-        format.html { redirect_to @queda, notice: 'Queda was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @queda }
+    if params[:data].present?
+      @q = Queda.new
+      @q.amostra = params[:data]
+      if @q.save
+        head :created
       else
-        format.html { render action: 'new' }
-        format.json { render json: @queda.errors, status: :unprocessable_entity }
+        head :bad_request
+      end
+    else
+      @queda = Queda.new(queda_params)
+
+      respond_to do |format|
+        if @queda.save
+          format.html { redirect_to @queda, notice: 'Queda was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @queda }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @queda.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
