@@ -57,6 +57,18 @@ class QuedasController < ApplicationController
     end
   end
 
+  def novaqueda
+    if params[:data].present?
+      @q = Queda.new
+      @q.amostra = params[:data]
+      if @q.save
+        head :created
+      else
+        head :bad_request
+      end
+    end
+  end
+
   # PATCH/PUT /quedas/1
   # PATCH/PUT /quedas/1.json
   def update
