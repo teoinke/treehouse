@@ -1,9 +1,5 @@
 Treebook::Application.routes.draw do
 
-  controller :quedas do 
-    post 'quedas/novaqueda' => novaqueda
-  end
-
   resources :quedas
 
   devise_for :users

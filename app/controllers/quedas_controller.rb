@@ -7,16 +7,6 @@ class QuedasController < ApplicationController
     @quedas = Queda.all
   end
 
-  def novaqueda
-    @q = Queda.new
-    @q.amostra = params[:data]
-    if @q.save
-      head :created
-    else
-      head :bad_request
-    end
-  end
-
   # GET /quedas/1
   # GET /quedas/1.json
   def show
