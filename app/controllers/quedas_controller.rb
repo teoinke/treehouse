@@ -1,5 +1,6 @@
 class QuedasController < ApplicationController
   before_action :set_queda, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token  
 
   # GET /quedas
   # GET /quedas.json
