@@ -1,35 +1,17 @@
-<h1>Listing quedas</h1>
+<div class="page-header">
+  <h2>All Samples</h2>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Imei</th>
-      <th>Classificacao</th>
-      <th>Timestamp queda</th>
-      <th>Timestamp recebimento</th>
-      <th>Amostra</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @quedas.each do |queda| %>
-      <tr>
-        <td><%= queda.imei %></td>
-        <td><%= queda.classificacao %></td>
-        <td><%= queda.timestamp_queda %></td>
-        <td><%= queda.timestamp_recebimento %></td>
-        <td><%= queda.amostra %></td>
-        <td><%= link_to 'Show', queda %></td>
-        <td><%= link_to 'Edit', edit_queda_path(queda) %></td>
-        <td><%= link_to 'Destroy', queda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Queda', new_queda_path %>
+<% @quedas.each do |queda| %>
+  <div class="quedas">
+    <strong><%= queda.id %></strong>
+    <p><%= queda.amostra %></p>
+    <div class="meta">
+      <%= link_to time_ago_in_words(queda.created_at) + " ago", queda %>
+      <span class="admin">
+        | <%= link_to "Edit", edit_queda_path(queda) %> | 
+        <%= link_to "Delete", queda, method: :delete, data: { confirm: "Are you sure you want to delete this sample?"} %>
+      </span>
+    </div>
+  </div>
+<% end %>

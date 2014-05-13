@@ -1,3 +1,24 @@
 // Place all the styles related to the quedas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.quedas {
+	border-bottom: solid 1px #CCC;
+	padding: 5px 0;
+}
+
+.quedas p {
+	margin: 4px 0;
+}
+
+.quedas.hover {
+	background: #F0F0F0;
+}
+
+.quedas .admin {
+	display: none;
+}
+
+.quedas.hover .admin {
+	display: inline;
+}
