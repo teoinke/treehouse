@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree .
 //= require quedas
+//= require d3
