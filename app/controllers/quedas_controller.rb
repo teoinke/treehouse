@@ -11,6 +11,7 @@ class QuedasController < ApplicationController
   # GET /quedas/1
   # GET /quedas/1.json
   def show
+    logger.info "This is from logger in controller"
   end
 
   # GET /quedas/new
