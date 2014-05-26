@@ -33,13 +33,16 @@ class QuedasController < ApplicationController
       @q.timestamp_recebimento = Time.now.to_i
       if params[:imei].present?
         @q.imei = params[:imei]
+      end
       if params[:timestamp_queda].present?
         @q.timestamp_queda = params[:timestamp_queda]
+      end
       if params[:locationX].present?
         @q.locationX = params[:locationX]
+      end
       if params[:locationY].present?
         @q.locationY = params[:locationY]
-
+      end
       if @q.save
         head :created
       else
