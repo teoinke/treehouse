@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class QuedasController < ApplicationController
   before_action :set_queda, only: [:show, :edit, :update, :destroy]
   skip_before_filter :verify_authenticity_token  
@@ -33,13 +35,16 @@ class QuedasController < ApplicationController
       @q.timestamp_recebimento = Time.now.to_i
       if params[:imei].present?
         @q.imei = params[:imei]
+      end
       if params[:timestamp_queda].present?
         @q.timestamp_queda = params[:timestamp_queda]
+      end
       if params[:locationX].present?
         @q.locationX = params[:locationX]
+      end
       if params[:locationY].present?
         @q.locationY = params[:locationY]
-
+      end
       if @q.save
         head :created
       else
