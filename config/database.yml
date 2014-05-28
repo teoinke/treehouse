@@ -32,5 +32,5 @@ production:
   encoding: unicode
   database: postgres
   pool: 5
-  username: postgres
-  password:
+  username: teoinke
+  password: herokutcc
