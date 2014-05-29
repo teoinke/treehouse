@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523203614) do
+ActiveRecord::Schema.define(version: 20140529040422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "quedas", force: true do |t|
     t.string   "imei"
-    t.binary   "classificacao"
-    t.datetime "timestamp_queda"
-    t.datetime "timestamp_recebimento"
     t.text     "amostra"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tipo_queda"
     t.string   "locationX"
     t.string   "locationY"
+    t.string   "tempo_queda"
+    t.string   "tempo_recebimento"
+    t.string   "email"
   end
 
   create_table "statuses", force: true do |t|

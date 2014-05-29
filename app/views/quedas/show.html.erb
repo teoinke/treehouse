@@ -6,23 +6,34 @@
 </p>
 
 <p>
-  <strong>Classificacao:</strong>
-  <%= @queda.classificacao %>
+  <strong>Email:</strong>
+  <%= @queda.email %>
+</p>
+
+<p>
+  <strong>Classificação:</strong>
+  <%= @queda.tipo_queda %>
 </p>
 
 <p>
   <strong>Timestamp queda:</strong>
-  <%= @queda.timestamp_queda %>
+  <%= @queda.tempo_queda %>
 </p>
 
 <p>
   <strong>Timestamp recebimento:</strong>
-  <%= @queda.timestamp_recebimento %>
+  <%= @queda.tempo_recebimento %>
 </p>
 
 <p>
   <strong>Amostra:</strong>
   <%= @queda.amostra %>
+</p>
+
+<p>
+  <strong>GPS:</strong>
+  <%= @queda.locationX %> - 
+  <%= @queda.locationY %>
 </p>
 
 <%= link_to 'Edit', edit_queda_path(@queda) %> |
