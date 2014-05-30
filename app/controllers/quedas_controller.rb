@@ -2,6 +2,7 @@
 
 class QuedasController < ApplicationController
   before_action :set_queda, only: [:show, :edit, :update, :destroy]
+  before_action :classifica, only: :novaqueda
   skip_before_filter :verify_authenticity_token  
 
   # GET /quedas
@@ -68,6 +69,7 @@ class QuedasController < ApplicationController
     if params[:data].present?
       @q = Queda.new
       @q.amostra = params[:data]
+      @output = @result
       if @q.save
         head :created
       else
@@ -206,4 +208,9 @@ class QuedasController < ApplicationController
     def queda_params
       params.require(:queda).permit(:imei, :classificacao, :timestamp_queda, :timestamp_recebimento, :amostra)
     end
+
+  def classifica
+    s = params[:data]
+    @result = "classificado: " + s
+  end
 end
