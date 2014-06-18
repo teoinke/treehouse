@@ -31,12 +31,15 @@ class QuedasController < ApplicationController
       @q = Queda.new
       @q.amostra = params[:data]
       @q.tipo_queda = classifier(params[:data])
-      @q.timestamp_recebimento = Time.now.to_i
+      @q.tempo_recebimento = Time.now.to_i
       if params[:imei].present?
         @q.imei = params[:imei]
       end
       if params[:timestamp_queda].present?
-        @q.timestamp_queda = params[:timestamp_queda]
+        @q.tempo_queda = params[:tempo_queda]
+      end
+      if params[:email].present?
+        @q.email = params[:email]
       end
       if params[:locationX].present?
         @q.locationX = params[:locationX]
