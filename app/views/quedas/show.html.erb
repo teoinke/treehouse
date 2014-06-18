@@ -17,12 +17,12 @@
 
 <p>
   <strong>Timestamp queda:</strong>
-  <%= @queda.tempo_queda %>
+  <%= Time.at(@queda.tempo_queda) %>
 </p>
 
 <p>
   <strong>Timestamp recebimento:</strong>
-  <%= @queda.tempo_recebimento %>
+  <%= Time.at(@queda.tempo_recebimento) %>
 </p>
 
 <p>

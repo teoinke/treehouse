@@ -36,8 +36,8 @@ class QuedasController < ApplicationController
       if params[:imei].present?
         @q.imei = params[:imei]
       end
-      if params[:timestamp_queda].present?
-        @q.tempo_queda = params[:tempo_queda]
+      if params[:timestamp].present?
+        @q.tempo_queda = params[:timestamp]
       end
       if params[:email].present?
         @q.email = params[:email]
