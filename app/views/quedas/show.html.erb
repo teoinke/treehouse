@@ -1,41 +1,64 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Imei:</strong>
-  <%= @queda.imei %>
-</p>
+<div id="dados">
 
-<p>
-  <strong>Email:</strong>
-  <%= @queda.email %>
-</p>
+  <!-- <%= link_to 'Edit', edit_queda_path(@queda) %> | -->
 
-<p>
-  <strong>Classificação:</strong>
-  <%= @queda.tipo_queda %>
-</p>
-
-<p>
-  <strong>Timestamp queda:</strong>
-  <%= if @queda.tempo_queda.blank? then " - " else Time.at(Integer(@queda.tempo_queda)) end %>
-</p>
-
-<p>
-  <strong>Timestamp recebimento:</strong>
-  <%= if @queda.tempo_recebimento.blank? then " - " else Time.at(Integer(@queda.tempo_recebimento)) end %>
-</p>
-
-<p>
-  <strong>Amostra:</strong>
-  <%= @queda.amostra %>
-</p>
-
-<p>
-  <strong>GPS:</strong>
-  <%= @queda.locationX %> , 
-  <%= @queda.locationY %><br>
-  <a target="_blank" href="http://maps.google.com/maps?q=<%= @queda.locationX %>,<%= @queda.locationY %>&15z">Google Maps</a>
-</p>
-
-<%= link_to 'Edit', edit_queda_path(@queda) %> |
-<%= link_to 'Back', quedas_path %>
+  <table>
+    <tr>
+      <td><strong>Imei:</strong></td>
+      <td><%= @queda.imei %></td>
+    </tr>
+    <tr>
+      <td><strong>Email:</strong></td>
+      <td><%= @queda.email %></td>
+    </tr>
+    <tr>
+      <td><strong>Classificação:</strong></td>
+      <td class="<%= @queda.tipo_queda == "pillow" ? "safe" : "dangerous" %>">
+        <%= @queda.tipo_queda == "pillow" ? "Queda segura" : "Queda não segura" %></td>
+    </tr>
+    <tr>
+      <td><strong>Momento da queda:</strong></td>
+      <td>
+        <% if @queda.tempo_queda.blank? then %>
+        <%= " - " %>
+        <% else %>
+        <% t = Time.at(Integer(@queda.tempo_queda)) %>
+        <%= t.strftime("%d/%m/%Y às %T") %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Recebimento:</strong></td>
+      <td>
+        <% if @queda.tempo_recebimento.blank? then %>
+        <%= " - " %>
+        <% else %>
+        <% t = Time.at(Integer(@queda.tempo_recebimento)) %>
+        <% #t.day.to_s + "/" + t.mon.to_s + "/" + t.year.to_s + " às " + t.sec.to_s + ":" + t.min.to_s + ":" +  %>
+        <%= t.strftime("%d/%m/%Y às %T") %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Amostra:</strong></td>
+      <td><%= @queda.amostra %></td>
+    </tr>
+    <tr>
+      <td><strong>GPS:</strong></td>
+      <td><%= @queda.locationX %> , 
+          <%= @queda.locationY %>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </table><br>
+  <p>
+    Veja o local da queda no:
+    <a target="_blank" href="http://maps.google.com/maps?q=<%= @queda.locationX %>,<%= @queda.locationY %>&15z">Google Maps</a><br><br>
+  </p>
+  <%= link_to 'Voltar', quedas_path %>
+</div>
