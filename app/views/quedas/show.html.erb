@@ -17,12 +17,12 @@
 
 <p>
   <strong>Timestamp queda:</strong>
-  <%= if @queda.tempo_queda.blank? then " - " else Time.at(@queda.tempo_queda) end %>
+  <%= if @queda.tempo_queda.blank? then " - " else Time.at(Integer(@queda.tempo_queda)) end %>
 </p>
 
 <p>
   <strong>Timestamp recebimento:</strong>
-  <%= if @queda.tempo_recebimento.blank? then " - " else Time.at(@queda.tempo_recebimento) end %>
+  <%= if @queda.tempo_recebimento.blank? then " - " else Time.at(Integer(@queda.tempo_recebimento)) end %>
 </p>
 
 <p>
