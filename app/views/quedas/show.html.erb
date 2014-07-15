@@ -34,7 +34,7 @@
   <strong>GPS:</strong>
   <%= @queda.locationX %> , 
   <%= @queda.locationY %><br>
-  <a target="_blank" href="http://maps.google.com/maps?q=<%= @queda.locationX %>,<%= @queda.locationX %>&15z">Google Maps</a>
+  <a target="_blank" href="http://maps.google.com/maps?q=<%= @queda.locationX %>,<%= @queda.locationY %>&15z">Google Maps</a>
 </p>
 
 <%= link_to 'Edit', edit_queda_path(@queda) %> |
