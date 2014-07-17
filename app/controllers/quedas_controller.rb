@@ -48,6 +48,8 @@ class QuedasController < ApplicationController
       if params[:locationY].present?
         @q.locationY = params[:locationY]
       end
+      if params[:feedback].present?
+        @q.feedback = params[:feedback]
       if @q.save
         head :created
       else

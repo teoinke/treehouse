@@ -19,6 +19,12 @@
         <%= @queda.tipo_queda == "pillow" ? "Queda segura" : "Queda não segura" %></td>
     </tr>
     <tr>
+      <td><strong>Feedback do usuário:</strong></td>
+      <td <%= @queda.feedback == "1" ? "class=safe" : (@queda.feedback == "2" ? "class=\"dangerous\"" : " - ") %> >
+        <%= @queda.feedback == "1" ? "Queda segura" : (@queda.feedback == "2" ? "Queda não segura" : " - ") %>
+      </td>
+    </tr>
+    <tr>
       <td><strong>Momento da queda:</strong></td>
       <td>
         <% if @queda.tempo_queda.blank? then %>
@@ -41,15 +47,18 @@
         <% end %>
       </td>
     </tr>
-    <tr>
+    <!-- <tr>
       <td><strong>Amostra:</strong></td>
       <td><%= @queda.amostra %></td>
-    </tr>
+    </tr> -->
     <tr>
       <td><strong>GPS:</strong></td>
-      <td><%= @queda.locationX %> , 
-          <%= @queda.locationY %>
+      <td>
+        <a target="_blank" href="http://maps.google.com/maps?q=<%= @queda.locationX %>,<%= @queda.locationY %>&15z">Ver local da queda</a>
       </td>
+      <!-- <td><%= @queda.locationX %> , 
+          <%= @queda.locationY %>
+      </td> -->
     </tr>
     <tr>
       <td></td>
@@ -57,8 +66,7 @@
     </tr>
   </table><br>
   <p>
-    Veja o local da queda no:
-    <a target="_blank" href="http://maps.google.com/maps?q=<%= @queda.locationX %>,<%= @queda.locationY %>&15z">Google Maps</a><br><br>
+    
   </p>
   <%= link_to 'Voltar', quedas_path %>
 </div>

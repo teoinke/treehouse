@@ -24,6 +24,11 @@ module Treebook
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.assets.enabled = true
-    config.assets.initialize_on_precompile = true
+    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = true
+
+    # In production, run:
+    # bundle exec rake assets:clean RAILS_ENV=production
+
   end
 end
