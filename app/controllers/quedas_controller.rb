@@ -50,6 +50,7 @@ class QuedasController < ApplicationController
       end
       if params[:feedback].present?
         @q.feedback = params[:feedback]
+      end
       if @q.save
         head :created
       else
