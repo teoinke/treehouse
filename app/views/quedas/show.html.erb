@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div id="dados">
+<div class="dados">
 
   <!-- <%= link_to 'Edit', edit_queda_path(@queda) %> | -->
 
@@ -20,7 +20,7 @@
     </tr>
     <tr>
       <td><strong>Feedback do usuário:</strong></td>
-      <td <%= @queda.feedback == "1" ? "class=safe" : (@queda.feedback == "2" ? "class=\"dangerous\"" : " - ") %> >
+      <td <%= @queda.feedback == "1" ? "class=safe" : (@queda.feedback == "2" ? "class=dangerous" : " - ") %> >
         <%= @queda.feedback == "1" ? "Queda segura" : (@queda.feedback == "2" ? "Queda não segura" : " - ") %>
       </td>
     </tr>

@@ -1,6 +1,22 @@
 <div class="quedas">
   <strong><%= queda_counter + 1 %></strong><br>
-  <p><%= queda.amostra %></p>
+
+  <div class="dados-index">
+    <table>
+      <tr>
+        <td><strong>Classificação:</strong></td>
+        <td class="<%= queda.tipo_queda == "pillow" ? "safe" : "dangerous" %>">
+          <%= queda.tipo_queda == "pillow" ? "Queda segura" : "Queda não segura" %></td>
+      </tr>
+    	<tr>
+        <td><strong>Feedback do usuário:</strong></td>
+        <td <%= queda.feedback == "1" ? "class=safe" : (queda.feedback == "2" ? "class=dangerous" : " - ") %> >
+          <%= queda.feedback == "1" ? "Queda segura" : (queda.feedback == "2" ? "Queda não segura" : " - ") %>
+        </td>
+      </tr>
+    </table>
+  </div>
+
   <div class="meta">
     <%= link_to time_ago_in_words(queda.created_at) + " ago", queda %>
     <span class="admin">
